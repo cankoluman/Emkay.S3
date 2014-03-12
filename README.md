@@ -53,7 +53,7 @@ After that you can publish the content of a source folder to S3 by using this st
        	<PublishFolderWithHeaders
        	Key="$(YourKey)"
        	Secret="$(YourSecret)"
-       	SourceFolders="@ExampleItem"
+       	SourceFolders="@(ExampleItem)"
        	Bucket="$(YourBucket)"
        	DestinationFolder="$(YourDestination)" />
       		
