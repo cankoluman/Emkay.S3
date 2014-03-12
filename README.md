@@ -40,6 +40,24 @@ After that you can publish the content of a source folder to S3 by using this st
       		SourceFolder="$(source)"
       		Bucket="$(S3_bucket)"
       		DestinationFolder="$(S3_subfolder)" />
+      		
+
+
+      	<ItemGroup>
+       	<ExampleItem Include="stylesheet">
+       	<Content-Type>text/css</Content-Type>
+       	<Content-Encoding>gzip</Content-Encoding>
+       	</ExampleItem>
+       	</ItemGroup>
+	
+       	<PublishFolderWithHeaders
+       	Key="$(YourKey)"
+       	Secret="$(YourSecret)"
+       	SourceFolders="@ExampleItem"
+       	Bucket="$(YourBucket)"
+       	DestinationFolder="$(YourDestination)" />
+      		
+      		
   	</Target>
 
 ## License
